@@ -20,4 +20,23 @@
         <item name="android:backgroundTint">@color/accent</item>
         <item name="android:textColor">@color/on_accent</item>
     </style>
+    <!-- Keep the form's white button text out of borderless dialog actions. -->
+    <style name="PickerTheme" parent="android:style/Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:buttonBarButtonStyle">@style/PickerAction</item>
+        <item name="android:datePickerStyle">@style/CompactDatePicker</item>
+        <item name="android:timePickerStyle">@style/CompactTimePicker</item>
+    </style>
+    <style name="CompactDatePicker" parent="android:style/Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+        <item name="android:calendarViewShown">false</item>
+    </style>
+    <style name="CompactTimePicker" parent="android:style/Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+    <style name="PickerAction" parent="android:style/Widget.Material.Button.Borderless">
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
 </resources>

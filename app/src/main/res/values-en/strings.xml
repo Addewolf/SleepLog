@@ -34,6 +34,7 @@
     <string name="document_saved">Document saved</string>
     <string name="document_error">Could not save the document. Please try again. An empty or incomplete file may have been created.</string>
     <string name="picker_missing">No file picker is available.</string>
+    <string name="select">Select</string>
     <string name="date_label">Date</string>
     <string name="time_label">Time</string>
     <string name="zone_note">Time zone: %1$s. Daylight saving is included. For a repeated autumn hour, the later occurrence is used.</string>

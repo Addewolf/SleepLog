@@ -7,6 +7,7 @@ växlar mellan svenska och engelska. Klockslag visas alltid i 24-timmarsformat.
 
 - **Datum och klockslag:** välj datum och tid för insomning och uppvaknande.
   Formuläret föreslår de senaste åtta timmarna; ändra värdena innan du sparar.
+  **Välj** bekräftar värdet; **Avbryt** behåller det tidigare värdet.
 - **Enbart längd:** välj datum och antal minuter. Dessa poster får inga påhittade klockslag.
 - Spara flera pass samma dag. Historiken visar varje post och **Sovtid per dygn** visar summorna.
 - **Ändra** öppnar en sparad post. **Radera** kräver bekräftelse.
@@ -24,19 +25,22 @@ Exporterade dokument ligger kvar där du sparade dem. Exporten är en rapport, i
 Android **6.0 eller senare** krävs. Paketnamnet är `se.adde.sleeplog`, så SleepLog
 och NoteWriter kan vara installerade samtidigt.
 
-Överför `SleepLog-v0.1.apk` till telefonen och öppna den i filhanteraren. Tillåt
+Överför `SleepLog-v0.1.1.apk` till telefonen och öppna den i filhanteraren. Tillåt
 installation från den källan om Android frågar. APK-filen är signerad med den lokala
 Android-debugnyckeln för denna första testversion. Behåll samma nyckel vid uppdateringar
 för att kunna installera över versionen och bevara data.
+V0.1.1 använder samma paket, signeringscertifikat och lagringsformat som v0.1.
+Installera som uppdatering; avinstallera inte och rensa inte appens lagring.
 
 Med USB-felsökning och en redan godkänd dator kan du i stället köra:
 
 ```powershell
-adb install -r SleepLog-v0.1.apk
+adb install -r SleepLog-v0.1.1.apk
 ```
 
 Följ [telefonens testlista](docs/PHONE_TEST.md). Teststatus och exakta bygguppgifter
-finns i [verifieringsrapporten](docs/VERIFICATION.md).
+finns i [fixrapporten för v0.1.1](docs/PICKER_FIX.md) och
+[grundversionens verifieringsrapport](docs/VERIFICATION.md).
 
 ## Tidsregler i v0.1
 
@@ -85,6 +89,7 @@ inte i appen. Dessa tester ersätter inte handhavande eller verklig omstart på 
 | Typsnitt, textstorlekar och textstilar | `app/src/main/res/values/typography.xml` |
 | Tema och gemensam knappstil | `app/src/main/res/values/styles.xml` |
 | Gemensamma knappar, kort och avstånd | `app/src/main/java/se/adde/sleeplog/ui/Controls.kt` |
+| Datum-/tidsdialogernas rullning och höjd | `app/src/main/java/se/adde/sleeplog/ui/PickerDialogs.kt` |
 | Ikon och framtida bilder | `app/src/main/res/drawable/` |
 | Svenska/engelska UI-texter | `app/src/main/res/values/strings.xml`, `values-en/strings.xml` |
 | Registreringarnas datamodell | `core/src/main/java/se/adde/sleeplog/core/SleepEntry.java` |

@@ -1,4 +1,25 @@
-# SleepLog v0.1 – kort telefontest
+# SleepLog – kort telefontest
+
+## Uppdatering v0.1.1: datum och tid
+
+1. Notera en befintlig post och installera `SleepLog-v0.1.1.apk` över appen.
+   **Avinstallera inte och rensa inte lagring.** Kontrollera att posten finns kvar.
+2. Öppna datum respektive tid under både **Insomning** och **Uppvaknande**.
+   Ändra och tryck **Välj**: rätt fält ska uppdateras och väljaren stängas.
+   Öppna igen: det bekräftade värdet ska vara valt. Ändra och tryck **Avbryt**:
+   fältet ska behålla sitt tidigare värde. Testa även bakåtknappen.
+3. Spara `2026-11-01 23:15 → 2026-11-02 07:45`. Förhandsvisning och sparad post
+   ska visa **8 tim 30 min** (dygnsbidrag 45 min respektive 7 tim 45 min).
+   Öppna **Ändra**, ändra alla fyra fälten och spara. Samma post ska uppdateras.
+4. Testa datumet för **Enbart längd**, både på en ny post och via **Ändra**.
+   Exakta klockslag ska fortfarande saknas.
+5. Prova telefonens stora skärm-/textstorlek, stående och liggande läge.
+   **Välj** och **Avbryt** ska vara läsbara och nåbara. Prova även English:
+   **Select/Cancel**, fortfarande 24-timmarsformat.
+6. Stäng och öppna appen igen; kontrollera sparade värden. Skapa ett dokument
+   och jämför tiderna med historiken. Lämna återkoppling om något döljs på din telefon.
+
+## Grundfunktioner
 
 Testa med påhittade poster nedan. Dessa datum gör resultaten enkla att jämföra.
 

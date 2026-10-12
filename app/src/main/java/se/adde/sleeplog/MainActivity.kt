@@ -9,6 +9,7 @@ import android.view.*
 import android.widget.*
 import se.adde.sleeplog.core.*
 import se.adde.sleeplog.ui.Controls
+import se.adde.sleeplog.ui.PickerDialogs
 import java.io.File
 import java.util.*
 
@@ -142,14 +143,16 @@ class MainActivity : Activity() {
         lateinit var button: Button
         button = ui.button("") {
             val parts = button.text.toString().split("-").map { it.toInt() }
-            DatePickerDialog(this, { _, year, month, day ->
+            DatePickerDialog(this, R.style.PickerTheme, { _, year, month, day ->
                 button.text = String.format(Locale.ROOT, "%04d-%02d-%02d", year, month + 1, day)
                 button.contentDescription = getString(label) + ", " + getString(R.string.date_label) + ": " + button.text
                 updatePreview()
             }, parts[0], parts[1] - 1, parts[2]).apply {
                 datePicker.minDate = Times.parse("1900-01-01 12:00", zone)
                 datePicker.maxDate = Times.parse("2100-12-31 12:00", zone)
-            }.show()
+                setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.select), this)
+                setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.cancel), this)
+            }.let { PickerDialogs.show(it) }
         }
         button.tag = label
         ui.add(parent, button)
@@ -160,11 +163,14 @@ class MainActivity : Activity() {
         lateinit var button: Button
         button = ui.button("") {
             val parts = button.text.toString().split(":").map { it.toInt() }
-            TimePickerDialog(this, { _, hour, minute ->
+            TimePickerDialog(this, R.style.PickerTheme, { _, hour, minute ->
                 button.text = String.format(Locale.ROOT, "%02d:%02d", hour, minute)
                 button.contentDescription = getString(label) + ", " + getString(R.string.time_label) + ": " + button.text
                 updatePreview()
-            }, parts[0], parts[1], true).show()
+            }, parts[0], parts[1], true).apply {
+                setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.select), this)
+                setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.cancel), this)
+            }.let { PickerDialogs.show(it) }
         }
         button.tag = label
         ui.add(parent, button)

@@ -34,6 +34,7 @@
     <string name="document_saved">Dokumentet sparat</string>
     <string name="document_error">Kunde inte spara dokumentet. Försök igen. En tom eller ofullständig fil kan ha skapats.</string>
     <string name="picker_missing">Ingen filväljare finns tillgänglig.</string>
+    <string name="select">Välj</string>
     <string name="date_label">Datum</string>
     <string name="time_label">Tid</string>
     <string name="zone_note">Tidszon: %1$s. Vinter-/sommartid räknas med. Vid en upprepad hösttimme används den senare förekomsten.</string>
