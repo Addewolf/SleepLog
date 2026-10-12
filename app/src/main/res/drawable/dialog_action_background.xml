@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/picker_press">
+    android:color="@color/dialog_press">
     <!-- The solid content exists in the idle state, independently of the press ripple. -->
     <item>
         <inset android:insetLeft="4dp" android:insetRight="4dp"

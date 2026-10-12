@@ -7,5 +7,5 @@
     <color name="accent">#4A604D</color>
     <color name="on_accent">#FFFFFF</color>
     <color name="line">#D4D8CD</color>
-    <color name="picker_press">#1FFFFFFF</color>
+    <color name="dialog_press">#1FFFFFFF</color>
 </resources>

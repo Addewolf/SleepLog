@@ -12,6 +12,7 @@
         <item name="android:navigationBarColor">@color/ink</item>
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:buttonStyle">@style/SleepButton</item>
+        <item name="android:alertDialogTheme">@style/DialogTheme</item>
     </style>
     <style name="SleepButton" parent="android:style/Widget.Material.Button">
         <item name="android:textAllCaps">false</item>
@@ -20,10 +21,12 @@
         <item name="android:backgroundTint">@color/accent</item>
         <item name="android:textColor">@color/on_accent</item>
     </style>
-    <!-- Isolate the picker controls from the activity's and platform's default button styles. -->
-    <style name="PickerTheme" parent="android:style/Theme.Material.Light.Dialog.Alert">
+    <!-- Dialog buttons share a visible idle style, separate from form buttons. -->
+    <style name="DialogTheme" parent="android:style/Theme.Material.Light.Dialog.Alert">
         <item name="android:colorAccent">@color/accent</item>
-        <item name="android:buttonBarButtonStyle">@style/PickerAction</item>
+        <item name="android:buttonBarButtonStyle">@style/DialogAction</item>
+    </style>
+    <style name="PickerTheme" parent="DialogTheme">
         <item name="android:datePickerStyle">@style/CompactDatePicker</item>
         <item name="android:timePickerStyle">@style/CompactTimePicker</item>
     </style>
@@ -34,8 +37,8 @@
     <style name="CompactTimePicker" parent="android:style/Widget.Material.TimePicker">
         <item name="android:timePickerMode">spinner</item>
     </style>
-    <style name="PickerAction" parent="android:style/Widget.Material.Button">
-        <item name="android:background">@drawable/picker_action_background</item>
+    <style name="DialogAction" parent="android:style/Widget.Material.Button">
+        <item name="android:background">@drawable/dialog_action_background</item>
         <item name="android:backgroundTint">@null</item>
         <item name="android:textColor">@color/on_accent</item>
         <item name="android:textAllCaps">false</item>

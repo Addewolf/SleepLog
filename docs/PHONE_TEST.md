@@ -1,5 +1,18 @@
 # SleepLog – kort telefontest
 
+## Uppdatering v0.1.3: radering och övriga dialoger
+
+1. Installera `SleepLog-v0.1.3.apk` över tidigare version. Kontrollera att posterna
+   finns kvar och att underrubriken under SleepLog är borttagen.
+2. Tryck **Radera** på en testpost. **Avbryt** och **Radera** ska synas direkt,
+   innan du rör deras område. **Avbryt** ska lämna posten kvar.
+3. Öppna samma dialog igen och bekräfta **Radera**. Bara testposten ska försvinna.
+4. Kontrollera även knapparna i **Språk / Language**, **Skapa dokument** och
+   felmeddelandet vid längden 0 minuter. Testa stor text och engelska.
+5. Datum-/tidsväljarna ska fortsätta fungera som i v0.1.2.
+
+Avinstallera inte och rensa inte lagring vid uppdateringen.
+
 ## Uppdatering v0.1.2: synliga knappar före första trycket
 
 1. Installera `SleepLog-v0.1.2.apk` över den befintliga appen utan avinstallation.

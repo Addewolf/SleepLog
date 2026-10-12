@@ -25,21 +25,22 @@ Exporterade dokument ligger kvar där du sparade dem. Exporten är en rapport, i
 Android **6.0 eller senare** krävs. Paketnamnet är `se.adde.sleeplog`, så SleepLog
 och NoteWriter kan vara installerade samtidigt.
 
-Överför `SleepLog-v0.1.2.apk` till telefonen och öppna den i filhanteraren. Tillåt
+Överför `SleepLog-v0.1.3.apk` till telefonen och öppna den i filhanteraren. Tillåt
 installation från den källan om Android frågar. APK-filen är signerad med den lokala
 Android-debugnyckeln för denna första testversion. Behåll samma nyckel vid uppdateringar
 för att kunna installera över versionen och bevara data.
-V0.1.2 använder samma paket, signeringscertifikat och lagringsformat som v0.1/v0.1.1.
+V0.1.3 använder samma paket, signeringscertifikat och lagringsformat som tidigare versioner.
 Installera som uppdatering; avinstallera inte och rensa inte appens lagring.
 
 Med USB-felsökning och en redan godkänd dator kan du i stället köra:
 
 ```powershell
-adb install -r SleepLog-v0.1.2.apk
+adb install -r SleepLog-v0.1.3.apk
 ```
 
 Följ [telefonens testlista](docs/PHONE_TEST.md). Teststatus och exakta bygguppgifter
-finns i [rapporten för synliga knappar i v0.1.2](docs/PICKER_VISIBILITY.md),
+finns i [rapporten för gemensamma dialogknappar i v0.1.3](docs/DIALOG_FIX.md),
+[rapporten för synliga knappar i v0.1.2](docs/PICKER_VISIBILITY.md),
 [fixrapporten för v0.1.1](docs/PICKER_FIX.md) och
 [grundversionens verifieringsrapport](docs/VERIFICATION.md).
 
@@ -90,6 +91,7 @@ inte i appen. Dessa tester ersätter inte handhavande eller verklig omstart på 
 | Typsnitt, textstorlekar och textstilar | `app/src/main/res/values/typography.xml` |
 | Tema och gemensam knappstil | `app/src/main/res/values/styles.xml` |
 | Gemensamma knappar, kort och avstånd | `app/src/main/java/se/adde/sleeplog/ui/Controls.kt` |
+| Dialogknappar och dialogtema | `app/src/main/java/se/adde/sleeplog/ui/Dialogs.kt`, `values/styles.xml` (`DialogTheme`/`DialogAction`), `drawable/dialog_action_background.xml` |
 | Datum-/tidsdialogernas rullning och höjd | `app/src/main/java/se/adde/sleeplog/ui/PickerDialogs.kt` |
 | Ikon och framtida bilder | `app/src/main/res/drawable/` |
 | Svenska/engelska UI-texter | `app/src/main/res/values/strings.xml`, `values-en/strings.xml` |

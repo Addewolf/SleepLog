@@ -9,6 +9,7 @@ import android.view.*
 import android.widget.*
 import se.adde.sleeplog.core.*
 import se.adde.sleeplog.ui.Controls
+import se.adde.sleeplog.ui.Dialogs
 import se.adde.sleeplog.ui.PickerDialogs
 import java.io.File
 import java.util.*
@@ -67,16 +68,15 @@ class MainActivity : Activity() {
         setContentView(scroll)
         applyInsets()
         ui.add(root, ui.text("SleepLog", R.style.TextTitle), 0)
-        ui.add(root, ui.text(getString(R.string.tagline), R.style.TextMuted), 8)
         ui.add(root, ui.button(getString(R.string.language)) { chooseLanguage() }, 16)
         buildEditor()
         ui.add(root, ui.text(getString(R.string.daily), R.style.TextSection))
         summary = ui.column(); ui.add(root, summary, 8)
         ui.add(root, ui.text(getString(R.string.day_note), R.style.TextMuted), 16)
         exportButton = ui.button(getString(R.string.document)) {
-            AlertDialog.Builder(this).setTitle(R.string.template)
+            Dialogs.builder(this).setTitle(R.string.template)
                 .setItems(arrayOf(getString(R.string.standard_template))) { _, _ -> chooseDestination() }
-                .setNegativeButton(R.string.cancel, null).show()
+                .setNegativeButton(R.string.cancel, null).create().let { Dialogs.show(it) }
         }
         exportButton.isEnabled = !pendingExport
         ui.add(root, exportButton, 20)
@@ -221,7 +221,8 @@ class MainActivity : Activity() {
                 SleepEntry.length(id, lengthDate.text.toString(), minutes.text.toString().toLongOrNull() ?: 0)
             else timedEntry(id)
         } catch (_: IllegalArgumentException) {
-            AlertDialog.Builder(this).setMessage(R.string.validation).setPositiveButton(android.R.string.ok, null).show()
+            Dialogs.builder(this).setMessage(R.string.validation).setPositiveButton(android.R.string.ok, null)
+                .create().let { Dialogs.show(it) }
             return
         }
         val updated = entries.toMutableList()
@@ -267,14 +268,14 @@ class MainActivity : Activity() {
             ui.add(card, ui.text(StandardReport.entry(e, swedish)))
             ui.add(card, ui.button(getString(R.string.edit)) { edit(e) })
             ui.add(card, ui.button(getString(R.string.delete)) {
-                AlertDialog.Builder(this).setTitle(R.string.delete_title).setMessage(R.string.delete_message)
+                Dialogs.builder(this).setTitle(R.string.delete_title).setMessage(R.string.delete_message)
                     .setNegativeButton(R.string.cancel, null)
                     .setPositiveButton(R.string.delete) { _, _ ->
                         if (persist(entries.filter { it.id != e.id }.toMutableList())) {
                             if (editingId == e.id) resetEditor()
                             renderHistory(); toast(R.string.deleted)
                         }
-                    }.show()
+                    }.create().let { Dialogs.show(it) }
             })
         }
         if (entries.size > visibleEntries) ui.add(history, ui.button(getString(R.string.show_more)) {
@@ -283,13 +284,13 @@ class MainActivity : Activity() {
     }
 
     private fun chooseLanguage() {
-        AlertDialog.Builder(this).setTitle(R.string.language)
+        Dialogs.builder(this).setTitle(R.string.language)
             .setSingleChoiceItems(arrayOf("Svenska", "English"), if (swedish) 0 else 1) { dialog, choice ->
                 val language = if (choice == 0) "sv" else "en"
                 val stored = getSharedPreferences("settings", MODE_PRIVATE).edit().putString("language", language).commit()
                 dialog.dismiss()
                 if (stored) recreate() else toast(R.string.storage_error)
-            }.setNegativeButton(R.string.cancel, null).show()
+            }.setNegativeButton(R.string.cancel, null).create().let { Dialogs.show(it) }
     }
 
     @Suppress("DEPRECATION")

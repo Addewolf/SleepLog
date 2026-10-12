@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tagline">En lugn plats för dina sovtider.</string>
     <string name="language">Språk / Language</string>
     <string name="new_entry">Registrera sömn</string>
     <string name="edit_entry">Ändra registrering</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tagline">A quiet place for your sleep times.</string>
     <string name="language">Language / Språk</string>
     <string name="new_entry">Record sleep</string>
     <string name="edit_entry">Edit entry</string>
