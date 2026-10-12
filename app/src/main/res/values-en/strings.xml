@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tagline">A quiet place for your sleep times.</string>
+    <string name="language">Language / Språk</string>
+    <string name="new_entry">Record sleep</string>
+    <string name="edit_entry">Edit entry</string>
+    <string name="with_times">Dates and times</string>
+    <string name="length_only">Duration only</string>
+    <string name="fell_asleep">Fell asleep</string>
+    <string name="woke_up">Woke up</string>
+    <string name="chosen_date">Session date</string>
+    <string name="minutes">Sleep duration in minutes</string>
+    <string name="minutes_hint">For example 45</string>
+    <string name="unknown_times">Exact times are unknown for this entry.</string>
+    <string name="save">Save entry</string>
+    <string name="save_changes">Save changes</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_title">Delete this entry?</string>
+    <string name="delete_message">This entry will be removed. This cannot be undone.</string>
+    <string name="saved">Entry saved</string>
+    <string name="deleted">Entry deleted</string>
+    <string name="validation">Check the values. The end must follow the start; duration must be 1 minute to 366 days. Dates must be in 1900–2100. A time skipped by daylight saving cannot be used.</string>
+    <string name="storage_error">Could not save. Your previous entries are retained. Please try again.</string>
+    <string name="load_error">Could not read entries. Storage is left unchanged. Close the app and try again.</string>
+    <string name="daily">Sleep per day</string>
+    <string name="history">History</string>
+    <string name="empty">No entries yet.</string>
+    <string name="day_note">Sessions crossing midnight are split by day. Overlapping sessions are added separately.</string>
+    <string name="document">Create document</string>
+    <string name="template">Choose template</string>
+    <string name="standard_template">Standard – text document (.txt)</string>
+    <string name="document_saved">Document saved</string>
+    <string name="document_error">Could not save the document. Please try again. An empty or incomplete file may have been created.</string>
+    <string name="picker_missing">No file picker is available.</string>
+    <string name="date_label">Date</string>
+    <string name="time_label">Time</string>
+    <string name="zone_note">Time zone: %1$s. Daylight saving is included. For a repeated autumn hour, the later occurrence is used.</string>
+    <string name="preview">Duration: %1$s</string>
+    <string name="preview_invalid">Choose an end after the start.</string>
+    <string name="show_more">Show more</string>
+</resources>

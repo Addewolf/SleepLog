@@ -1,0 +1,40 @@
+# Build outputs and caches
+.gradle/
+.kotlin/
+**/build/
+.externalNativeBuild/
+.cxx/
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.log
+
+# Local SDK paths and IDE settings
+local.properties
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Credentials and signing material
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+key.properties
+secrets.properties
+google-services.json
+
+# Local release staging (upload the APK through GitHub Releases)
+.release-prep/
+
+# Keep the Gradle wrapper scripts, properties, and JAR in source control.

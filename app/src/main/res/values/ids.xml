@@ -1,0 +1,10 @@
+<resources>
+    <item name="mode_times" type="id" />
+    <item name="mode_length" type="id" />
+    <item name="duration_minutes" type="id" />
+    <item name="start_date" type="id" />
+    <item name="start_time" type="id" />
+    <item name="end_date" type="id" />
+    <item name="end_time" type="id" />
+    <item name="length_date" type="id" />
+</resources>

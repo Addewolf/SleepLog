@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tagline">En lugn plats för dina sovtider.</string>
+    <string name="language">Språk / Language</string>
+    <string name="new_entry">Registrera sömn</string>
+    <string name="edit_entry">Ändra registrering</string>
+    <string name="with_times">Datum och klockslag</string>
+    <string name="length_only">Enbart längd</string>
+    <string name="fell_asleep">Insomning</string>
+    <string name="woke_up">Uppvaknande</string>
+    <string name="chosen_date">Datum för sovpasset</string>
+    <string name="minutes">Sovtid i minuter</string>
+    <string name="minutes_hint">Till exempel 45</string>
+    <string name="unknown_times">Exakta klockslag saknas för denna registrering.</string>
+    <string name="save">Spara registrering</string>
+    <string name="save_changes">Spara ändringar</string>
+    <string name="cancel">Avbryt</string>
+    <string name="edit">Ändra</string>
+    <string name="delete">Radera</string>
+    <string name="delete_title">Radera registreringen?</string>
+    <string name="delete_message">Den här registreringen tas bort. Det går inte att ångra.</string>
+    <string name="saved">Registreringen sparad</string>
+    <string name="deleted">Registreringen raderad</string>
+    <string name="validation">Kontrollera värdena. Slutet måste vara efter starten, längden minst 1 minut och högst 366 dygn. Datum måste vara 1900–2100. Ett klockslag som hoppas över vid sommartid kan inte användas.</string>
+    <string name="storage_error">Kunde inte spara. Dina tidigare registreringar finns kvar. Försök igen.</string>
+    <string name="load_error">Kunde inte läsa registreringarna. Lagringen lämnas orörd. Stäng appen och försök igen.</string>
+    <string name="daily">Sovtid per dygn</string>
+    <string name="history">Historik</string>
+    <string name="empty">Inga registreringar ännu.</string>
+    <string name="day_note">Pass över midnatt delas mellan dygnen. Överlappande pass summeras var för sig.</string>
+    <string name="document">Skapa dokument</string>
+    <string name="template">Välj mall</string>
+    <string name="standard_template">Standard – textdokument (.txt)</string>
+    <string name="document_saved">Dokumentet sparat</string>
+    <string name="document_error">Kunde inte spara dokumentet. Försök igen. En tom eller ofullständig fil kan ha skapats.</string>
+    <string name="picker_missing">Ingen filväljare finns tillgänglig.</string>
+    <string name="date_label">Datum</string>
+    <string name="time_label">Tid</string>
+    <string name="zone_note">Tidszon: %1$s. Vinter-/sommartid räknas med. Vid en upprepad hösttimme används den senare förekomsten.</string>
+    <string name="preview">Sovtid: %1$s</string>
+    <string name="preview_invalid">Välj ett slut efter starten.</string>
+    <string name="show_more">Visa fler</string>
+</resources>
