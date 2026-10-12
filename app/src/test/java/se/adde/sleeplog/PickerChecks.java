@@ -3,6 +3,9 @@ package se.adde.sleeplog;
 import android.app.*;
 import android.content.DialogInterface;
 import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.RippleDrawable;
 import android.view.*;
 import android.widget.*;
 import org.junit.*;
@@ -29,6 +32,9 @@ public class PickerChecks {
 
     @Test public void actionsFitSmallPortraitAtDefaultSize() { checkActions(1f); }
 
+    @Test @Config(qualifiers = "w320dp-h480dp-night-mdpi")
+    public void untouchedActionsAreVisibleInSystemNightMode() { checkActions(1f); }
+
     private void checkActions(float scale) {
         RuntimeEnvironment.setFontScale(scale);
         try (ActivityController<MainActivity> controller = Robolectric.buildActivity(MainActivity.class).setup().visible()) {
@@ -43,7 +49,13 @@ public class PickerChecks {
                 Button button = dialog.getButton(which);
                 Rect rect = new Rect();
                 boolean visible = button.getGlobalVisibleRect(rect);
-                assertEquals(activity.getColor(R.color.accent), button.getCurrentTextColor());
+                // No click on either action has occurred: the normal state must already be opaque.
+                assertFalse(button.isPressed());
+                assertSolidAction(button);
+                button.setPressed(true);
+                assertSolidAction(button);
+                button.setPressed(false);
+                assertSolidAction(button);
                 assertEquals(activity.getString(which == DialogInterface.BUTTON_POSITIVE ? R.string.select : R.string.cancel), button.getText().toString());
                 assertTrue(button.isShown()); assertTrue(visible); assertTrue(button.isEnabled());
                 assertEquals(button.getHeight(), rect.height());
@@ -60,5 +72,19 @@ public class PickerChecks {
                 dialog.dismiss();
             }
         }
+    }
+    private void assertSolidAction(Button button) {
+        assertNull(button.getBackgroundTintList());
+        assertFalse(button.getTextColors().isStateful());
+        assertEquals(button.getContext().getColor(R.color.on_accent), button.getCurrentTextColor());
+        assertEquals(1f, button.getAlpha(), 0f);
+        assertTrue(button.getBackground() instanceof RippleDrawable);
+        RippleDrawable background = (RippleDrawable)button.getBackground();
+        assertEquals(255, background.getAlpha());
+        InsetDrawable inset = (InsetDrawable)background.getDrawable(0);
+        GradientDrawable fill = (GradientDrawable)inset.getDrawable();
+        if (android.os.Build.VERSION.SDK_INT >= 24)
+            assertEquals(button.getContext().getColor(R.color.accent), fill.getColor().getDefaultColor());
+        assertEquals(255, fill.getAlpha());
     }
 }

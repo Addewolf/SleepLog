@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/picker_press">
+    <!-- The solid content exists in the idle state, independently of the press ripple. -->
+    <item>
+        <inset android:insetLeft="4dp" android:insetRight="4dp"
+            android:insetTop="4dp" android:insetBottom="4dp">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/accent" />
+                <corners android:radius="6dp" />
+            </shape>
+        </inset>
+    </item>
+</ripple>

@@ -1,5 +1,19 @@
 # SleepLog – kort telefontest
 
+## Uppdatering v0.1.2: synliga knappar före första trycket
+
+1. Installera `SleepLog-v0.1.2.apk` över den befintliga appen utan avinstallation.
+   Kontrollera att dina gamla poster finns kvar.
+2. Öppna varje datum-/tidsfält. **Välj/Avbryt** ska direkt synas som gröna knappar
+   med vit text, innan du rör knapparna eller deras område. På engelska: **Select/Cancel**.
+3. Upprepa efter att ha stängt och öppnat väljaren, vid redigering av en post,
+   med stor text och med telefonens mörka läge. Testa även **Enbart längd → Datum**.
+4. Bekräfta en ändring och avbryt nästa. Bara det bekräftade värdet ska användas
+   när du sparar. Klockan ska fortfarande vara i 24-timmarsformat.
+
+Om problemet kvarstår, ange APK-version, telefonmodell och Android-version.
+Kontrollen här gäller första visningen, inte bara utseendet medan knappen trycks.
+
 ## Uppdatering v0.1.1: datum och tid
 
 1. Notera en befintlig post och installera `SleepLog-v0.1.1.apk` över appen.

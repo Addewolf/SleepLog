@@ -7,11 +7,21 @@ import android.view.ViewGroup
 import android.widget.ScrollView
 import android.widget.DatePicker
 import android.widget.TimePicker
+import se.adde.sleeplog.R
 
 /** Let the picker scroll inside the dialog so its actions remain reachable on short screens. */
 object PickerDialogs {
     fun show(dialog: AlertDialog) {
         dialog.show()
+        // Apply to the actual platform buttons before their first draw. Some dialog themes
+        // supply stateful tints; the idle appearance must not depend on focus or a press.
+        for (which in listOf(DialogInterface.BUTTON_POSITIVE, DialogInterface.BUTTON_NEGATIVE)) {
+            dialog.getButton(which).apply {
+                backgroundTintList = null
+                setBackgroundResource(R.drawable.picker_action_background)
+                setTextColor(context.getColor(R.color.on_accent))
+            }
+        }
         val picker = findPicker(dialog.window!!.decorView) ?: return
         val parent = picker.parent as ViewGroup
         val position = parent.indexOfChild(picker)

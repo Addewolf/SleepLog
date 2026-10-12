@@ -25,21 +25,22 @@ Exporterade dokument ligger kvar där du sparade dem. Exporten är en rapport, i
 Android **6.0 eller senare** krävs. Paketnamnet är `se.adde.sleeplog`, så SleepLog
 och NoteWriter kan vara installerade samtidigt.
 
-Överför `SleepLog-v0.1.1.apk` till telefonen och öppna den i filhanteraren. Tillåt
+Överför `SleepLog-v0.1.2.apk` till telefonen och öppna den i filhanteraren. Tillåt
 installation från den källan om Android frågar. APK-filen är signerad med den lokala
 Android-debugnyckeln för denna första testversion. Behåll samma nyckel vid uppdateringar
 för att kunna installera över versionen och bevara data.
-V0.1.1 använder samma paket, signeringscertifikat och lagringsformat som v0.1.
+V0.1.2 använder samma paket, signeringscertifikat och lagringsformat som v0.1/v0.1.1.
 Installera som uppdatering; avinstallera inte och rensa inte appens lagring.
 
 Med USB-felsökning och en redan godkänd dator kan du i stället köra:
 
 ```powershell
-adb install -r SleepLog-v0.1.1.apk
+adb install -r SleepLog-v0.1.2.apk
 ```
 
 Följ [telefonens testlista](docs/PHONE_TEST.md). Teststatus och exakta bygguppgifter
-finns i [fixrapporten för v0.1.1](docs/PICKER_FIX.md) och
+finns i [rapporten för synliga knappar i v0.1.2](docs/PICKER_VISIBILITY.md),
+[fixrapporten för v0.1.1](docs/PICKER_FIX.md) och
 [grundversionens verifieringsrapport](docs/VERIFICATION.md).
 
 ## Tidsregler i v0.1
